@@ -16,5 +16,14 @@ class Hand:
             elif card.value == "A" and self.value > 21:
                 self.value -= 10
             elif card.value == "A":
-                self.value += 10
+                self.value += 11
         return self.value
+    
+        def show_hand(self):
+            if self.dealer:
+                print("Dealer")
+                print(self.cards[1])
+            else:
+                for card in self.cards:
+                    print(card)
+                print("Total: {}".format(self.get_value()))
